@@ -1,0 +1,7 @@
+*
+!.zshrc
+!.zshrc.local
+!.oh-my-zsh/
+!.oh-my-zsh-custom/themes/monofraps.zsh-theme
+!.gitignore
+!.gitmodules
