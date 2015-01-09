@@ -50,11 +50,15 @@ plugins=(git common-aliases dirhistory docker npm python sudo vagrant yum)
 
 # User configuration
 
-export PATH="/opt/clang/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/monofraps/bin:/opt/gradle-1.12/bin:/opt/gradle-1.12/bin"
+export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/monofraps/bin:/opt/gradle-1.12/bin:/opt/gradle-1.12/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
+DEV_DIR=$HOME/devel
 
+source $ZSH/oh-my-zsh.sh
+source $DEV_DIR/.devenv
+
+alias dev="source $DEV_DIR/.devenv && cd $DEV_DIR"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -80,3 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zrc="zshrc && source ~/.zshrc"
+
+unset GREP_OPTIONS
+
+alias grep="/usr/bin/grep --color=auto --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn"
